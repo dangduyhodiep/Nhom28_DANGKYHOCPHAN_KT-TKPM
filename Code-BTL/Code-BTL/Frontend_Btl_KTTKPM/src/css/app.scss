@@ -1,0 +1,299 @@
+/*
+    Author: Tran Anh Khoa
+    Website: Ứng dụng giới thiệu việc làm công nghệ thông tin
+*/
+
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+    01. General Setting
+    02. Responsive Snipper
+    03. Preloader
+    04. Header
+    05. Nav
+--------------------------------------------- */
+
+/*
+------------------------------------------------
+01. General Setting
+------------------------------------------------
+*/
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+  scroll-behavior: smooth;
+
+  &:focus {
+    outline: 0;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+$font-01: "Muli", sans-serif;
+$s1: 0.5s;
+$m-01: #7681a4;
+$m-02: #5d698d;
+
+$heightHeader: 8vh;
+$heightBodyContent: 92vh;
+
+$c-01: #10182f;
+$c-02: #545d7a;
+$c-03: #306bf3;
+
+$g-01: linear-gradient(140deg, $m-01, $m-02);
+
+$neu-01: #f7f8fc;
+$neu-02: #dae1f5;
+$neu-03: #6f7073;
+$neu-04: #505050;
+$neu-05: #403e3e;
+/*
+------------------------------------------------
+02. Responsive Snipper
+------------------------------------------------
+*/
+
+@mixin container {
+  width: 70%;
+  height: 100%;
+  margin: 0px auto;
+}
+
+@mixin lg {
+  @media screen and (max-width: 1180px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 799px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 511px) {
+    @content;
+  }
+}
+
+/*
+      Devices : iphone 5/SE, iphone 6,7,8 (plus), iphone X, small Table, Ipad, Ipad Pro, TV 1920x1080
+      Vertical : d
+      Horizontal : n
+*/
+
+/* IPHONE 5, SE */
+@mixin v5 {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin h5 {
+  @media screen and (max-width: 568px) {
+    @content;
+  }
+}
+
+/* IPHONE 6,7,8 */
+
+@mixin v678 {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin h678 {
+  @media screen and (max-width: 667px) {
+    @content;
+  }
+}
+
+/* IPHONE 6,7,8 (plus) */
+
+@mixin v678P {
+  @media screen and (max-width: 414px) {
+    @content;
+  }
+}
+
+@mixin h678P {
+  @media screen and (max-width: 736px) {
+    @content;
+  }
+}
+
+/*
+/* IPHONE X */
+
+@mixin vX {
+  @media screen and (max-width: 414px) {
+    @content;
+  }
+}
+
+@mixin hX {
+  @media screen and (max-width: 812px) {
+    @content;
+  }
+}
+
+/*
+/* SMALL TABLE */
+
+@mixin vSmallTable {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin hSmallTable {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+/*
+/* IPAD */
+
+@mixin vIpad {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin hIpad {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/*
+/* IPAD PRO */
+
+@mixin vIpadP {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin hIpadP {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/*
+/* DESKTOP */
+
+@mixin vIpad {
+  @media screen and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin hIpad {
+  @media screen and (max-width: 1080px) {
+    @content;
+  }
+}
+
+/*
+/* Custom */
+
+@mixin v500 {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+img {
+  user-select: none;
+
+  &:hover {
+  }
+}
+
+::selection {
+  background-color: crimson;
+  color: whitesmoke;
+}
+
+.sm-none {
+  @media screen and (max-width: 799px) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.xs-none {
+  @media screen and (max-width: 511px) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center__column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-left__column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.flex-center__row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.bg_defaultColor {
+  background-color: #001529;
+  color: #ffffff;
+}
+
+.hr-custom {
+  width: 100%;
+  height: 1px;
+  background-color: #f0f0f0;
+}
+
+.custom-size-notify {
+  width: 400px !important;
+  margin: 3% 0;
+  height: 90px !important;
+}
